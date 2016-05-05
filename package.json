@@ -48,7 +48,7 @@
     "import-glob-loader": "^1.1.0",
     "json-loader": "^0.5.4",
     "loader-utils": "^0.2.12",
-    "node-sass": "^3.4.2",
+    "node-sass": "3.4.2",
     "raw-loader": "^0.5.1",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",

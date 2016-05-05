@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router'
 import Index from './view/index'
 import Services from './services/services'
 
-//import './assets/scss/main.scss'
+import './assets/scss/main.scss'
 
 angular.module('app', [
   uiRouter,
