@@ -6,7 +6,7 @@ let <%= name %>Component = {
   bindings: {},
   template,
   controller,
-  controllerAs: '<%= name %>'
+  controllerAs: 'vm'
 };
 
 export default <%= name %>Component;

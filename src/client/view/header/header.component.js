@@ -6,7 +6,7 @@ let headerComponent = {
   bindings: {},
   template,
   controller,
-  controllerAs: 'header'
+  controllerAs: 'vm'
 }
 
 export default headerComponent
