@@ -23,6 +23,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.html$/,
+        loaders: ['html'], 
+      },
+      {
         test: /\.jsx?$/,
         loaders: ['babel','import-glob-loader'], 
         exclude: [path.resolve(__dirname, "../node_modules")],

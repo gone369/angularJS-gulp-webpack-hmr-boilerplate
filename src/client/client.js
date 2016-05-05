@@ -1,24 +1,19 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute} from 'react-router';
-import path from 'path';
+import angular from 'angular'
+import uiRouter from 'angular-ui-router'
+import Index from './view/index'
 
-//home route
-import Index from "./view/index.js";
-import Projects from './view/projects/projects.js';
-import Home from './view/_Home/Home.js';
+//import './assets/scss/main.scss'
 
-//scss
-import "./assets/scss/main.scss";
+angular.module('app', [
+  uiRouter,
+  Index
+]).config(($locationProvider,$urlRouterProvider,$stateProvider)=>{
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode({
+    enabled: true
+  });
+  $locationProvider.hashPrefix('!');
+})
 
-render(
-  (
-    <Router history={browserHistory}>
-      <Route path="/" component={Index}>
-        <IndexRoute component={Home}/>
-        <Route path="/projects" component={Projects}/>
-      </Route>
-    </Router>
-  ),document.getElementById('root')
-)
+
 

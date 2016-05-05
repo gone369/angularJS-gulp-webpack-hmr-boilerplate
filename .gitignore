@@ -3,6 +3,7 @@ test
 tests
 build
 nohup.out
+tags
 !.gitignore
 !.babelrc
 !.eslintrc

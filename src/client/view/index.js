@@ -1,31 +1,22 @@
-import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
-import Header from '../components/Header/header.js';
-import Footer from '../components/Footer/footer.js';
-import Home from './_Home/Home.js';
+import angular from 'angular'
+import uiRouter from 'angular-ui-router'
+import indexComponent from './index.component'
+import Header from './header/header'
+import About from './about/about'
 
-const testClasses = classNames({
-  'test'            : true,
-  'row'             : true,
-  'col-xs-6'        : true,
+const Index = angular.module('app.index',[
+  Header,
+  About
+])
+.config(($stateProvider)=>{
+  $stateProvider.state('index', {
+    url: '/',
+    template: '<index></index>',
+    //resolve: {
+    //d3: function(d3Service) {
+    //return d3Service.fetch()
+    //}
+  })
 })
-const testIds = classNames({
-  'test'            : true,
-})
-
-class Index extends Component{
-  constructor(props){
-    super(props);
-  }
-  render() {
-    return (
-      <div id="index" className="row">
-        <Header />
-        {this.props.children || <Home/>}
-        <Footer />
-      </div>
-    );
-  }
-}
-
-export default Index;
+.component('index',indexComponent);
+export default Index.name
