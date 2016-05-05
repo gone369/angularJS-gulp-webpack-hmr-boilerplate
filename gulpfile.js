@@ -1,4 +1,5 @@
 const gulp = require('gulp')
+const argv = require('yargs').argv
 const webpackStream = require('webpack-stream')
 const reload = require('gulp-hot-reload')
 const webpack = require('webpack')
@@ -7,6 +8,8 @@ const path = require('path')
 const config    = require(path.join(__dirname,'config/config.js'));
 const sequence  = require('run-sequence');
 const del   = require('del');
+const ejs = require("gulp-ejs");
+const rename = require('gulp-rename');
 
 const webpack_server_config = require(config.webpack_server_config)
 const webpack_client_dev_config = require(config.webpack_client_dev_config)
@@ -98,6 +101,25 @@ gulp.task('watch', () =>  {
 gulp.task('default', ['webpack-dev','watch'], () =>  {
   gutil.log('watching...');
 });
+
+gulp.task('generate', () => {
+  if (!argv.name || !argv.path){
+    console.log("############################");
+    console.log("COMPONENT TEMPLATES ARE NOT GENERATED");
+    console.log("usage: gulp generate --path ./somepath --name nameOfComponent");
+    console.log("############################");
+  }
+  else{
+    gulp.src(path.join(config.generator_component_path,"*"))
+    .pipe(ejs({
+      name: argv.name
+    }).on('error',(e)=>{console.log(e);}))
+    .pipe(rename((path) => {
+      path.basename = path.basename.replace('temp',argv.name);
+    }))
+    .pipe(gulp.dest(path.join(process.env.INIT_CWD,argv.path)));
+  }
+})
 
 gulp.task('dist', false, () =>  {
   sequence(

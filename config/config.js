@@ -2,6 +2,7 @@ const path = require("path");
 
 const config = {
   html_index_template_path : path.join(__dirname, "../src/client/view/index.ejs"),
+  generator_component_path: path.join(__dirname, "../generator/components"),
   client_entry : [path.join(__dirname, "../src/client/client.js")],
   server_entry : [path.join(__dirname, "../src/server/server.js")],
   dev_server_entry: [path.join(__dirname, "../tools/dev_server.js")],

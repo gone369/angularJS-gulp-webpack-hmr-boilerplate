@@ -4,7 +4,7 @@ import indexComponent from './index.component'
 import Header from './header/header'
 import About from './about/about'
 
-const Index = angular.module('app.index',[
+const index = angular.module('index',[
   Header,
   About
 ])
@@ -19,4 +19,4 @@ const Index = angular.module('app.index',[
   })
 })
 .component('index',indexComponent);
-export default Index.name
+export default index.name

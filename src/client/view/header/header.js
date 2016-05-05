@@ -2,6 +2,7 @@ import angular from 'angular'
 import uiRouter from 'angular-ui-router'
 import headerComponent from './header.component'
 
-const Header = angular.module('app.index.header',[
+const header = angular.module('header',[
+  uiRouter
 ]).component('header',headerComponent);
-export default Header.name
+export default header.name

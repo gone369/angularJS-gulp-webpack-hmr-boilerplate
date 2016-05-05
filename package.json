@@ -32,12 +32,15 @@
     "compression": "^1.6.1",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "glob": "^7.0.0",
     "gulp": "^3.9.1",
+    "gulp-ejs": "^2.1.1",
     "gulp-hot-reload": "^1.2.4",
+    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "html-loader": "^0.4.3",
@@ -56,6 +59,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.12",
     "webpack-hot-middleware": "^2.6.4",
-    "webpack-stream": "^3.1.0"
+    "webpack-stream": "^3.1.0",
+    "yargs": "^4.7.0"
   }
 }

@@ -2,7 +2,8 @@ import angular from 'angular'
 import uiRouter from 'angular-ui-router'
 import aboutComponent from './about.component'
 
-const About = angular.module('app.about',[
+const about = angular.module('about',[
+  uiRouter
 ])
 .config(($stateProvider)=>{
   $stateProvider.state('about', {
@@ -15,4 +16,4 @@ const About = angular.module('app.about',[
   })
 })
 .component('about',aboutComponent);
-export default About.name
+export default about.name
