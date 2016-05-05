@@ -1,12 +1,10 @@
-AngularJS Gulp&Webpack BoilerPlate
+RETAIL DASHBOARD FOR TARGET MISSIONS
 ==================================================================
-
-# Todo(for author)
-- include test library
 
 # Installation
 ```bash
 npm install
+npm i gulp -g
 ```
 
 # Usage
@@ -24,7 +22,7 @@ cd build/
 node server.js
 ```
 
-## Editing Configs
+## Editing Development Configs
 ```bash
 cd config
 vim config.js
