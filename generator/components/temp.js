@@ -14,4 +14,4 @@ const <%= name %> = angular.module('<%= name %>', [
 
 .component('<%= name %>', <%= name %>Component);
 
-export default <%= name %>;
+export default <%= name %>.name;
