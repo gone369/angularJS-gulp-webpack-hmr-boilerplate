@@ -24,7 +24,7 @@
     "templateStrings": true,                   // enable template strings
     "unicodeCodePointEscapes": true,           // enable code point escapes
     "globalReturn": false,                      // allow return statements in the global scope
-    "jsx": true                                // enable JSX
+    "jsx": false // enable JSX
   },
 
   "env": {
@@ -42,15 +42,12 @@
   "globals": {
     // e.g. "angular": true
   },
-
   "plugins": [
-    // e.g. "react" (must run `npm install eslint-plugin-react` first)
+    "angular"
   ],
-
   "rules": {
     ////////// Possible Errors //////////
-
-    "comma-dangle": 0,             // disallow trailing commas in object literals
+    "comma-dangle": 1,             // disallow trailing commas in object literals
     "no-cond-assign": 0,           // disallow assignment in conditional expressions
     "no-console": 0,               // disallow use of console (off by default in the node environment)
     "no-constant-condition": 0,    // disallow use of constant expressions in conditions
@@ -148,7 +145,7 @@
     "no-label-var": 0,                // disallow labels that share a name with a variable
     "no-shadow": 0,                   // disallow declaration of variables already declared in the outer scope
     "no-shadow-restricted-names": 0,  // disallow shadowing of names such as arguments
-    "no-undef": 0,                    // disallow use of undeclared variables unless mentioned in a /*global */ block
+    "no-undef": 0,                    // disallow use of undeclared variables unless mentioned in a [>global <] block
     "no-undef-init": 0,               // disallow use of undefined when initializing variables
     "no-undefined": 0,                // disallow use of undefined variable (off by default)
     "no-unused-vars": 0,              // disallow declaration of variables that are not used in the code
@@ -221,7 +218,7 @@
 
     ////////// ECMAScript 6 //////////
 
-    "constructor-super": 0,      // verify super() callings in constructors (off by default)
+    "constructor-super": 1,      // verify super() callings in constructors (off by default)
     "generator-star-spacing": 0, // enforce the spacing around the * in generator functions (off by default)
     "no-this-before-super": 0,   // disallow to use this/super before super() calling in constructors (off by default)
     "no-var": 0,                 // require let or const instead of var (off by default)
