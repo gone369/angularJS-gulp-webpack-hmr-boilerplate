@@ -8,11 +8,7 @@ const about = angular.module('about',[
 .config(($stateProvider)=>{
   $stateProvider.state('about', {
     url: '/about',
-    template: '<about></about>',
-    //resolve: {
-    //d3: function(d3Service) {
-    //return d3Service.fetch()
-    //}
+    template: '<about></about>'
   })
 })
 .component('about',aboutComponent);

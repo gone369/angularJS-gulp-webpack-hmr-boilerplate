@@ -11,11 +11,7 @@ const index = angular.module('index',[
 .config(($stateProvider)=>{
   $stateProvider.state('index', {
     url: '/',
-    template: '<index></index>',
-    //resolve: {
-    //d3: function(d3Service) {
-    //return d3Service.fetch()
-    //}
+    template: '<index></index>'
   })
 })
 .component('index',indexComponent);
