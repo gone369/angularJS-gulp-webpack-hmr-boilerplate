@@ -7,6 +7,7 @@ AngularJS Gulp&Webpack BoilerPlate
 # Installation
 ```bash
 npm install
+npm install eslint eslint-plugin-angular -g
 ```
 
 # Usage

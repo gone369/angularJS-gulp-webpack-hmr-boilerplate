@@ -39,7 +39,7 @@ gulp.task('webpack', () => {
     .pipe(webpackStream(webpack_server_config, webpack, webpack_callback))
     .pipe(reload({
       port: config.port,
-      react: true,
+      react: false,
       config: config.webpack_client_dev_config
     }))
 })
