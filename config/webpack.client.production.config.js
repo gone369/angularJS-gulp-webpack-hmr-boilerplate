@@ -49,13 +49,18 @@ module.exports = {
         loader: 'raw-loader'
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-        loader: 'url-loader?limit=8192'
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'url?limit=8192&mimetype=image/png&name=images/[name].[ext]'
       },
       {
-        test: /\.(eot|ttf|wav|mp3)$/,
-        loader: 'file-loader'
+        test: /\.(woff2|woff|eot|ttf)$/,
+        loader: 'file?name=fonts/[name].[ext]'
+      },
+      {
+        test: /\.(wav|mp3)$/,
+        loader: 'file?name=sounds/[name].[ext]'
       }
+
     ]
   },
   plugins: [
