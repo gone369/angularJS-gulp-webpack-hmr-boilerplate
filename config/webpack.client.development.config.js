@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const config = require(path.join(__dirname, "config.js"));
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   entry: config.client_entry,
@@ -58,6 +59,27 @@ module.exports = {
     ]
   },
   plugins: [
+    new SpritesmithPlugin({
+      src: {
+        cwd: path.resolve(__dirname, config.sprite.src),
+        glob: '*.png'
+      },
+      target: {
+        image: path.resolve(__dirname, config.sprite.dest.image),
+        css: [
+          path.resolve(__dirname, config.sprite.dest.css),
+          [
+            path.resolve(__dirname, config.sprite.dest.json),
+            {
+              format: 'json_texture'
+            }
+          ]
+        ]
+      },
+      apiOptions: {
+        cssImageRef: "~sprite.png"
+      }
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new HTMLWebpackPlugin({
       title: 'react framework',

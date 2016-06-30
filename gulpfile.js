@@ -18,11 +18,11 @@ const webpack_client_prod_config = require(config.webpack_client_prod_config)
 const webpack_callback = (err, stats) => {
   if(err) throw new gutil.PluginError("webpack", err);
   gutil.log('[webpack]', stats.toString({
-    colors: true,
-    chunkModules: false,
-    assets: false,
-    version: false,
-    hash: false
+    colors       : true,
+    chunkModules : false,
+    assets       : false,
+    version      : false,
+    hash         : false
   }))
 }
 
