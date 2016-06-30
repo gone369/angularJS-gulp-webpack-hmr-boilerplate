@@ -16,7 +16,7 @@ module.exports = {
   },
   stats: {
     colors: true,
-    timings: true,
+    timings: true
   },
   sassLoader: {
     includePaths: config.sass_include_paths
@@ -25,20 +25,20 @@ module.exports = {
     loaders: [
       {
         test: /\.html$/,
-        loaders: ['html'], 
+        loaders: ['html'] 
       },
       {
         test: /\.jsx?$/,
         loaders: ['babel','import-glob-loader'], 
-        exclude: [path.resolve(__dirname, "../node_modules")],
+        exclude: [path.resolve(__dirname, "../node_modules")]
       },
       {
         test:/\.css$/,
-        loaders: ["style-loader","css-loader"]
+        loaders: ["style-loader","css-loader","resolve-url"]
       },
       {
         test:/\.(scss|sass)$/,
-        loaders: ["style-loader","css-loader","sass-loader",'import-glob-loader']
+        loaders: ["style-loader","css-loader","sass-loader","resolve-url","sass?sourceMap",'import-glob-loader']
       },
       {
         test: /\.json$/,
@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-        loader: 'url-loader?limit=8192',
+        loader: 'url-loader?limit=8192'
       },
       {
         test: /\.(eot|ttf|wav|mp3)$/,
